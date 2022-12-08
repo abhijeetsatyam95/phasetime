@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='live.ico') }}">
+        <title>Phase Time</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        
+
+            
+
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1">Phase Time</span>
+        </nav>
+        
+        
+        <form class="myform">
+            <label for="username" class="Name">Name: </label>
+            <input type="text" name=”username” id="username">
+            <button id="join_leave" type="button" class="btn btn-success">Join call</button>
+            <button id="share_screen" type="button" class="btn btn-secondary" disabled>Share screen</button>
+            <button id="toggle_chat" type="button" class="btn btn-secondary" disabled>Toggle chat</button>
+            <button id="mute_unmute" type="button" class="btn btn-danger" >Mute</button>
+            <!-- <button id="mute" onclick="muteme()" type="button" class="btn btn-danger" >Mute</button> -->
+        </form>
+        <p id="count" class="myform">Disconnected.</p>
+        <div id="root">
+            <div id="container" class="container">
+                <div id="local" class="participant"><div></div><div class="label">Me</div></div>
+                <!-- more participants will be added dynamically here -->
+            </div>
+            <div id="chat">
+                <div id="chat-scroll">
+                    <div id="chat-content">
+                        <!-- chat content will be added dynamically here -->
+                    </div>
+                </div>
+                <input id="chat-input" type="text">
+            </div>
+        </div>
+        <script src="https://media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
+        <script src="https://media.twiliocdn.com/sdk/js/conversations/releases/1.0.0/twilio-conversations.min.js"></script>
+        <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+    </body>
+</html>
